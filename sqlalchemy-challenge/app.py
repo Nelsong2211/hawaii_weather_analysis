@@ -1,3 +1,4 @@
+# Import dependencies
 import numpy as np
 import pandas as pd
 import datetime as dt
@@ -14,6 +15,8 @@ from flask import Flask, jsonify
 #################################################
 # Database Setup
 #################################################
+
+# create an engine
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
@@ -66,7 +69,7 @@ def precipitation():
 
     # empty list
     all_prcp = []
-    # creTE A LOOP
+    # create a loop
     for date, prcp in  precip_score:
         precipitation = {}
         precipitation["date"] = date
@@ -76,7 +79,7 @@ def precipitation():
     #return Json
     return jsonify(all_prcp)
 
-
+# declare stations 
 @app.route("/api/v1.0/stations")
 def stations():
     # Create our session (link) from Python to the DB
@@ -101,10 +104,7 @@ def stations():
     #return jason
     return jsonify(stations)
 
-
-# @app.route("/api/v1.0/tobs")
-# def tobs():
-#     return jsonify("foo")
+# declare tobs function 
 
 @app.route("/api/v1.0/tobs")
 def tobs():
