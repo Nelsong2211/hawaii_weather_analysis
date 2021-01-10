@@ -122,7 +122,7 @@ def tobs():
     #return Json
     return jsonify(result)
     
-#declare star funtion 
+#declare start funtion 
 @app.route("/api/v1.0/<start>")
 def start(start):
     # Create our session (link) from Python to the DB
